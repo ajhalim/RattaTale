@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour
 
     private float gameTimer = 0f;
     public float moveSpeed = 5f;
+    public string currentIngredient = ""; 
 
     public Rigidbody2D player;
 
@@ -26,6 +27,18 @@ public class playerController : MonoBehaviour
 
         gameTimer += Time.deltaTime;
         //Debug.Log("Game Time: " + FormatTime(gameTimer));
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Transform ingredient = helperFunctions.FindChildWithTag(this.gameObject, currentIngredient);
+                if (ingredient != null) 
+                {
+                    ingredient.transform.parent = null;
+                    Vector2 newPosition = new Vector2(ingredient.transform.position.x, ingredient.transform.position.y);
+                    newPosition += new Vector2(2, 2);
+                    ingredient.transform.position = newPosition;
+                }
+        }
     }
 
     private void FixedUpdate()

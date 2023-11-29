@@ -21,6 +21,7 @@ public class ingredientScript : MonoBehaviour
         if (other.gameObject.tag == "Player" && other.gameObject.transform.childCount < 3)
         {
             transform.SetParent(other.gameObject.transform);
+            other.gameObject.GetComponent<playerController>().currentIngredient = tag;
         } else if (other.gameObject.transform.childCount >= 3)
         {
             Debug.Log("Can only carry one ingredient at a time.");

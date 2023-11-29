@@ -32,10 +32,6 @@ public class servingArea : MonoBehaviour
             recipesMade++;
             Debug.Log("Recipes Made: " + recipesMade);
             localRecipe.AddRange(masterRecipe);
-            for (int j = 0; j < localRecipe.Count; j++) 
-                    {
-                        Debug.Log(localRecipe[j]);
-                    }
         }
         
     }
@@ -46,19 +42,19 @@ public class servingArea : MonoBehaviour
         {
             for (int i = 0; i < localRecipe.Count; i++) 
             {
-                // Debug.Log(collision.gameObject.transform.Find(localRecipe[i]));
-
-                Transform ingredient = collision.gameObject.transform.Find(localRecipe[i]);
+                Transform ingredient = helperFunctions.FindChildWithTag(collision.gameObject, localRecipe[i]);
                 if (ingredient != null) 
                 {
                     localRecipe.Remove(ingredient.gameObject.tag);
                     Destroy(ingredient.gameObject);
+                    Debug.Log("Testing localRecipe");
+                    /* For making sure the contents of localRecipe change, uncomment as needed */
                     // for (int j = 0; j < localRecipe.Count; j++) 
                     // {
                     //     Debug.Log(localRecipe[j]);
                     // }
-                    
                 }
+                
             }
         }
         
