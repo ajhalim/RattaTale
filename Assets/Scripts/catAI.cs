@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFollowAI : MonoBehaviour
+public class catAI : MonoBehaviour
 {
     public GameObject player;
     public float speed;

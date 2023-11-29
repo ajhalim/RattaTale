@@ -9,7 +9,7 @@ public class playScript : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-    public void ReleadScene()
+    public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

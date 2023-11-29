@@ -4,7 +4,7 @@ using System.Diagnostics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
-public class PlayerController : MonoBehaviour
+public class playerController : MonoBehaviour
 {
 
     private float gameTimer = 0f;
