@@ -9,6 +9,9 @@ public class playerController : MonoBehaviour
 
     private float gameTimer = 0f;
     public float moveSpeed = 5f;
+    [SerializeField]
+    public float rotation;
+
     public string currentIngredient = ""; 
 
     public Rigidbody2D player;
