@@ -8,6 +8,7 @@ public class muteScript : MonoBehaviour
     //public Text buttonText; // The text component on the button to change the label
     public bool muteStatus = false;
     public float thing = 0;
+    public AudioSource audioSource;
     //private bool isMuted = false;
 
     public void ToggleMute()
@@ -25,6 +26,7 @@ public class muteScript : MonoBehaviour
             thing = 1;
         }
         PlayerPrefs.SetFloat("GameVolume", thing);
+        audioSource.volume = PlayerPrefs.GetFloat("GameVolume");
         //audioSource.volume = PlayerPrefs.GetFloat("GameVolume");
         //PlayerPrefs.SetFloat("GameVolume", audioSlider.value);
 
