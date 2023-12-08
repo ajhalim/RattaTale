@@ -452,3 +452,4 @@ MonoBehaviour:
   rotation: 0
   currentIngredient: 
   player: {fileID: 6639297482753326000}
+  currentScene: 

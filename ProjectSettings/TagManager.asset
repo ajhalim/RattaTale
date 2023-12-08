@@ -7,6 +7,8 @@ TagManager:
   - Tomato
   - Cheese
   - Baddy
+  - Spaghetti
+  - Ghost
   layers:
   - Default
   - TransparentFX
