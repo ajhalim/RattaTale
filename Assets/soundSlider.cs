@@ -19,7 +19,8 @@ public class soundSlider : MonoBehaviour
         //audioSlider.value = audioSource.volume;
         PlayerPrefs.SetFloat("GameVolume", audioSlider.value);
         PlayerPrefs.SetFloat("playTime", 0);
-        PlayerPrefs.SetFloat("lastRun", 9999999999);
+        PlayerPrefs.SetFloat("lastRun", 90);
+        PlayerPrefs.SetInt("numRuns", 0);
 
         audioSlider.value = PlayerPrefs.GetFloat("GameVolume");
     }

@@ -3108,7 +3108,7 @@ MonoBehaviour:
   masterRecipe: []
   localRecipe: []
   recipesMade: 0
-  nextScene: endScene
+  nextScene: 3rdScene
   gameTimer: 0
 --- !u!1 &1961295379
 GameObject:
