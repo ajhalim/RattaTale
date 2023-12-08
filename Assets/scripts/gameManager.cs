@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    public recipeUI recipeUI;
+    //public recipeUI recipeUI;
     public timerUI timerUI;
     public scoreUI scoreUI;
 

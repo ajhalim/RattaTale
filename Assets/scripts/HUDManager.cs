@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
@@ -27,16 +27,12 @@ public class HUDManager : MonoBehaviour
         ingredientSprites.Add("Tomato", Resources.Load<Sprite>("Tomato"));
         ingredientSprites.Add("Lettuce", Resources.Load<Sprite>("Lettuce"));
 
-        Debug.Log(ingredientSprites.Keys);
-
         // Update the HUD with the initial recipe
         UpdateHUD();
     }
 
     void UpdateHUD()
     {
-        Debug.Log("UpdateHUD called.");
-
         string recipeString = "Recipe: ";
         if (currentRecipe != null)
         {
@@ -45,8 +41,6 @@ public class HUDManager : MonoBehaviour
                 recipeString += $"{ingredient.Key} x{ingredient.Value} ";
             }
         }
-
-        Debug.Log($"Recipe Text: {recipeString}");
 
         recipeText.text = recipeString;
 
@@ -57,8 +51,6 @@ public class HUDManager : MonoBehaviour
         // Update the count of the current ingredient
         int ingredientCount = GetIngredientCount(currentIngredient);
         ingredientCountText.text = $"x{ingredientCount}";
-
-        Debug.Log($"Ingredient Count Text: {ingredientCount}");
     }
 
     string GetCurrentIngredient()
@@ -74,7 +66,8 @@ public class HUDManager : MonoBehaviour
     int GetIngredientCount(string ingredient)
     {
         // Implement logic to get the count of the current ingredient based on player actions
-        return Random.Range(0, 5);
+        //return Random.Range(0, 5);
+        return (1);
     }
 
     void Update()
