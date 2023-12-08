@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541c1c1e141c90f448a3c4064c9522d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HUDManager: {fileID: 0}
+  HUDManager: {fileID: 908156026}
   initialTime: 60
 --- !u!4 &150644279
 Transform:
