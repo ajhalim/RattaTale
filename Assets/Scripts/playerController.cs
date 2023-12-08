@@ -91,7 +91,7 @@ public class playerController : MonoBehaviour
         // Check if the collision involves a specific tag (e.g., "Obstacle").
 
         Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Baddy"))
+        if (collision.gameObject.CompareTag("Baddy") || collision.gameObject.CompareTag("Ghost"))
         {
             // React to the collision (e.g., print a message).
             //Debug.Log("Player");

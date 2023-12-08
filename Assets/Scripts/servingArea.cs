@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,7 +24,9 @@ public class servingArea : MonoBehaviour
     {
         //PlayerPrefs.SetInt("numRuns", 0);
 
-        int x = PlayerPrefs.GetInt("numRuns");
+        //PlayerPrefs.SetFloat("lastRun", 90);
+
+        //int x = PlayerPrefs.GetInt("numRuns");
 
         int runCount = PlayerPrefs.GetInt("numRuns") + 1;
 
@@ -65,6 +68,14 @@ public class servingArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(PlayerPrefs.GetFloat("lastRun"));
+
+        if(PlayerPrefs.GetFloat("lastRun") < gameTimer)
+        {
+            PlayerPrefs.SetInt("numRuns", 0);
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
         if (localRecipe.Count < 1) {
             recipesMade++;
             Debug.Log("Recipes Made: " + recipesMade);
