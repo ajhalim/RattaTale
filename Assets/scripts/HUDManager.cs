@@ -10,6 +10,10 @@ public class HUDManager : MonoBehaviour
     public Image ingredientImage;
     public TextMeshProUGUI ingredientCountText;
 
+    public TextMeshProUGUI timerText;
+
+    public TextMeshProUGUI scoreText;
+
     // Example recipe data structure
     private Dictionary<string, int> currentRecipe = new Dictionary<string, int>();
     
@@ -68,6 +72,16 @@ public class HUDManager : MonoBehaviour
         // Implement logic to get the count of the current ingredient based on player actions
         //return Random.Range(0, 5);
         return (1);
+    }
+
+    public void updateScore(float score)
+    {
+        scoreText.text = "Score: " + score;
+    }
+
+    public void UpdateTimer(float time)
+    {
+        timerText.text = "Time: " + Mathf.Max(0, Mathf.Ceil(time));
     }
 
     void Update()

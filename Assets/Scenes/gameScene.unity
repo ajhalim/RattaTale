@@ -189,8 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541c1c1e141c90f448a3c4064c9522d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerUI: {fileID: 1901591296}
-  scoreUI: {fileID: 1646675734}
+  HUDManager: {fileID: 0}
   initialTime: 60
 --- !u!4 &150644279
 Transform:
@@ -1224,6 +1223,8 @@ MonoBehaviour:
   recipeText: {fileID: 1115317532}
   ingredientImage: {fileID: 548818095}
   ingredientCountText: {fileID: 703814711}
+  timerText: {fileID: 1901591297}
+  scoreText: {fileID: 1646675735}
 --- !u!1 &1115317529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,7 +1923,6 @@ GameObject:
   - component: {fileID: 1646675733}
   - component: {fileID: 1646675736}
   - component: {fileID: 1646675735}
-  - component: {fileID: 1646675734}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1949,19 +1949,6 @@ RectTransform:
   m_AnchoredPosition: {x: -793, y: -461}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1646675734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646675732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c4795e79c7fd4459e1eb9fa7deeeb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 1646675735}
 --- !u!114 &1646675735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2432,7 +2419,6 @@ GameObject:
   - component: {fileID: 1901591295}
   - component: {fileID: 1901591298}
   - component: {fileID: 1901591297}
-  - component: {fileID: 1901591296}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -2459,19 +2445,6 @@ RectTransform:
   m_AnchoredPosition: {x: 791, y: -458}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1901591296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901591294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6009566827d7e94ebd5fffa537d1d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 1901591297}
 --- !u!114 &1901591297
 MonoBehaviour:
   m_ObjectHideFlags: 0

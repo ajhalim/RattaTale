@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    //public recipeUI recipeUI;
-    public timerUI timerUI;
-    public scoreUI scoreUI;
+    public HUDManager HUDManager;
 
     //public float recipeChangeInterval = 10f;
     public float initialTime = 60f;
@@ -19,14 +17,14 @@ public class gameManager : MonoBehaviour
         timer = initialTime;
         // Example: Set the initial recipe
         //SetCurrentRecipe("Pasta");
-        scoreUI.updateScore(score);
+        HUDManager.updateScore(score);
     }
 
     void Update()
     {
         timer -= Time.deltaTime;
 
-        timerUI.UpdateTimer(timer);
+        HUDManager.UpdateTimer(timer);
 
         if (timer <= 0f)
         {
@@ -36,33 +34,7 @@ public class gameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             score++;
-            scoreUI.updateScore(score);
+            HUDManager.updateScore(score);
         }
-        /*
-        timer += Time.deltaTime;
-        
-        if (timer >= recipeChangeInterval)
-        {
-            ChangeRecipe();
-        }
-        */
     }
-/*
-    void ChangeRecipe()
-    {
-        string[] recipes = { "Pizza", "Sushi", "Burger" };
-        string nextRecipe = recipes[Random.Range(0, recipes.Length)];
-
-        SetCurrentRecipe(nextRecipe);
-
-        timer = 0f;
-    }
-*/
-/*
-    void SetCurrentRecipe(string recipeName)
-    {
-        recipeUI.UpdateRecipeUI(recipeName);
-        // Add logic to handle other aspects of the game based on the new recipe
-    }
-*/
 }
