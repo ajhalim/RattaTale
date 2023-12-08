@@ -24,7 +24,7 @@ public class servingArea : MonoBehaviour
 
         int runCount = PlayerPrefs.GetInt("numRuns") + 1;
 
-        PlayerPrefs.SetInt("numRuns", runCount);
+        PlayerPrefs.SetInt("numRuns", 0);
 
         Debug.Log(PlayerPrefs.GetInt("numRuns"));
         servedItems = new List<GameObject>();
@@ -50,7 +50,7 @@ public class servingArea : MonoBehaviour
             PlayerPrefs.SetFloat("playTime", oldPlayTime);
             PlayerPrefs.SetFloat("lastRun", gameTimer);
 
-            WinManager.Instance.SetPlayerWonTwice();
+            SceneManager.LoadScene(nextScene);
         }
 
     }
