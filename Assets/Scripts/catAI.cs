@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
+using UnityEngine.SceneManagement;
 
 public class catAI : MonoBehaviour
 {
@@ -8,6 +11,7 @@ public class catAI : MonoBehaviour
     public float speed;
     private float distance;
     private float clockTime;
+    public string currentScene;
 
     // Start is called before the first frame update
     void Start()
@@ -48,5 +52,9 @@ public class catAI : MonoBehaviour
         {
             clockTime = 0;
         }
+
     }
+
+
+
 }

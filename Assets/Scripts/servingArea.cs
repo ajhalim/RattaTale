@@ -38,6 +38,7 @@ public class servingArea : MonoBehaviour
             Debug.Log("Recipes Made: " + recipesMade);
             localRecipe.AddRange(masterRecipe);
         }
+        
         //update time
         //gameTimer += Time.deltaTime;
 
@@ -57,7 +58,7 @@ public class servingArea : MonoBehaviour
                     Debug.Log("Testing localRecipe");
 
                     //changes scene
-                    ChangeScene(nextScene);
+                    
                     /* For making sure the contents of localRecipe change, uncomment as needed */
                     // for (int j = 0; j < localRecipe.Count; j++) 
                     // {
