@@ -24,7 +24,7 @@ public class servingArea : MonoBehaviour
     {
         PlayerPrefs.SetInt("numRuns", 0);
 
-        //PlayerPrefs.SetFloat("lastRun", 90);
+        PlayerPrefs.SetFloat("lastRun", 90);
 
         //int x = PlayerPrefs.GetInt("numRuns");
 
@@ -74,8 +74,8 @@ public class servingArea : MonoBehaviour
         if(PlayerPrefs.GetFloat("lastRun") < gameTimer)
         {
             PlayerPrefs.SetInt("numRuns", 0);
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
+            
+            SceneManager.LoadScene("endScene");
         }
         if (localRecipe.Count < 1) {
             recipesMade++;
