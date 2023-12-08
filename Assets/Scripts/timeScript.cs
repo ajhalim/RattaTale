@@ -17,8 +17,15 @@ public class timeScript : MonoBehaviour
         // Display the game time in the console (you can modify this part as needed)
         //Debug.Log("Game Time: " + FormatTime(gameTimer));
 
+        //if (Input.GetKeyDown(KeyCode.T))
+       // {
+       //     Debug.Log("Game Time: " + FormatTime(gameTimer));
+       // }
 
-    }
+
+
+
+        }
 
     string FormatTime(float timeInSeconds)
     {
@@ -29,7 +36,7 @@ public class timeScript : MonoBehaviour
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) // Replace "YourTag" with the tag of the object you want to detect collision with
         {
@@ -38,7 +45,7 @@ public class timeScript : MonoBehaviour
             
         }
         Debug.Log(other.name);
-    }*/
+    }
 
     /*
     private void OnCollisionEnter(Collision collision)

@@ -31,7 +31,7 @@ public class playerController : MonoBehaviour
         gameTimer += Time.deltaTime;
         //Debug.Log("Game Time: " + FormatTime(gameTimer));
 
-        if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
         {
             Transform ingredient = helperFunctions.FindChildWithTag(this.gameObject, currentIngredient);
                 if (ingredient != null) 
