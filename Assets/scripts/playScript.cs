@@ -11,6 +11,7 @@ public class playScript : MonoBehaviour
         PlayerPrefs.SetFloat("lastRun", 90);
         PlayerPrefs.SetInt("numRuns", 0);
         SceneManager.LoadScene(sceneName);
+        ///Please work
     }
     public void ReloadScene()
     {
