@@ -95,6 +95,7 @@ public class playerController : MonoBehaviour
         {
             // React to the collision (e.g., print a message).
             //Debug.Log("Player");
+            PlayerPrefs.SetInt("numRuns", 0);
             SceneManager.LoadScene(currentScene);
             // You can perform other actions here, such as destroying the object.
             // Destroy(gameObject);

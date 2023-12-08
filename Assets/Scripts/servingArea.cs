@@ -21,12 +21,19 @@ public class servingArea : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //PlayerPrefs.SetInt("numRuns", 0);
+
+        int x = PlayerPrefs.GetInt("numRuns");
 
         int runCount = PlayerPrefs.GetInt("numRuns") + 1;
 
-        PlayerPrefs.SetInt("numRuns", 0);
+        PlayerPrefs.SetInt("numRuns", runCount);
+
+        //Debug.Log(x);
+        //Debug.Log(x);
 
         Debug.Log(PlayerPrefs.GetInt("numRuns"));
+
         servedItems = new List<GameObject>();
         masterRecipe = new List<string>
         {
@@ -38,7 +45,7 @@ public class servingArea : MonoBehaviour
         localRecipe.AddRange(masterRecipe);
         recipesMade = 0;
 
-        if(PlayerPrefs.GetInt("numRuns") >= 2)
+        if(PlayerPrefs.GetInt("numRuns") > 2)
         {
             Debug.Log(gameTimer);
             float oldPlayTime = PlayerPrefs.GetFloat("playTime");
@@ -77,12 +84,12 @@ public class servingArea : MonoBehaviour
             PlayerPrefs.SetFloat("lastRun", gameTimer);
 
 
-            //WinManager.Instance.SetPlayerWon();
-            int runCount = PlayerPrefs.GetInt("numRuns") + 1;
+            WinManager.Instance.SetPlayerWon();
+            //int runCount = PlayerPrefs.GetInt("numRuns") + 1;
 
-            PlayerPrefs.SetInt("numRuns", runCount);
+            //PlayerPrefs.SetInt("numRuns", runCount);
 
-            SceneManager.LoadScene(nextScene);
+            //SceneManager.LoadScene(nextScene);
         }
 
 

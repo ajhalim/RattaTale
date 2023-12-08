@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    public HUDManager HUDManager;
+    //public HUDManager HUDManager;
 
     //public float recipeChangeInterval = 10f;
     public float initialTime = 60f;
@@ -17,14 +17,14 @@ public class gameManager : MonoBehaviour
         timer = initialTime;
         // Example: Set the initial recipe
         //SetCurrentRecipe("Pasta");
-        HUDManager.updateScore(score);
+        //HUDManager.updateScore(score);
     }
 
     void Update()
     {
         timer -= Time.deltaTime;
 
-        HUDManager.UpdateTimer(timer);
+        //HUDManager.UpdateTimer(timer);
 
         if (timer <= 0f)
         {
@@ -34,7 +34,7 @@ public class gameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             score++;
-            HUDManager.updateScore(score);
+            //HUDManager.updateScore(score);
         }
     }
 }
