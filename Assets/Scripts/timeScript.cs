@@ -6,7 +6,7 @@ using Debug = UnityEngine.Debug;
 
 public class timeScript : MonoBehaviour
 {
-    private float gameTimer = 0f;
+    public float gameTimer = 0f;
 
 
     void Update()
