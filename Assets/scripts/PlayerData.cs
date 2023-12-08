@@ -6,12 +6,12 @@ using UnityEngine;
 public class PlayerData
 {
     private Vector2 playerPos;
-    //private Quaternion playerRot;
+    private Quaternion playerRot;
 
-    public PlayerData(Vector2 pos) 
+    public PlayerData(Vector2 pos, Quaternion rot) 
     {
         playerPos = pos;
-        //playerRot = rot;
+        playerRot = rot;
     }
 
     public Vector2 getPos() 
@@ -19,8 +19,8 @@ public class PlayerData
         return playerPos;
     }
 
-   /* public Quaternion getRot() 
+   public Quaternion getRot() 
     {
         return playerRot;
-    }*/
+    }
 }
