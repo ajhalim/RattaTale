@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class servingArea : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class servingArea : MonoBehaviour
     public List<string> masterRecipe;
     public List<string> localRecipe;
     public int recipesMade;
+
+    public string nextScene;
+
+    public float gameTimer = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +39,9 @@ public class servingArea : MonoBehaviour
             localRecipe.AddRange(masterRecipe);
         }
         
+        //update time
+        //gameTimer += Time.deltaTime;
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -48,6 +56,9 @@ public class servingArea : MonoBehaviour
                     localRecipe.Remove(ingredient.gameObject.tag);
                     Destroy(ingredient.gameObject);
                     Debug.Log("Testing localRecipe");
+
+                    //changes scene
+                    
                     /* For making sure the contents of localRecipe change, uncomment as needed */
                     // for (int j = 0; j < localRecipe.Count; j++) 
                     // {
@@ -58,5 +69,10 @@ public class servingArea : MonoBehaviour
             }
         }
         
+    }
+
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
