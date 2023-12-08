@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 public class servingArea : MonoBehaviour
 {
@@ -15,9 +17,16 @@ public class servingArea : MonoBehaviour
     public string nextScene;
 
     public float gameTimer = 0f;
+    
     // Start is called before the first frame update
     void Start()
     {
+
+        int runCount = PlayerPrefs.GetInt("numRuns") + 1;
+
+        PlayerPrefs.SetInt("numRuns", runCount);
+
+        Debug.Log(PlayerPrefs.GetInt("numRuns"));
         servedItems = new List<GameObject>();
         masterRecipe = new List<string>
         {
@@ -28,6 +37,22 @@ public class servingArea : MonoBehaviour
         localRecipe = new List<string>();
         localRecipe.AddRange(masterRecipe);
         recipesMade = 0;
+
+        if(PlayerPrefs.GetInt("numRuns") >= 2)
+        {
+            Debug.Log(gameTimer);
+            float oldPlayTime = PlayerPrefs.GetFloat("playTime");
+
+
+
+            oldPlayTime += gameTimer;
+
+            PlayerPrefs.SetFloat("playTime", oldPlayTime);
+            PlayerPrefs.SetFloat("lastRun", gameTimer);
+
+            WinManager.Instance.SetPlayerWonTwice();
+        }
+
     }
 
     // Update is called once per frame
@@ -38,9 +63,33 @@ public class servingArea : MonoBehaviour
             Debug.Log("Recipes Made: " + recipesMade);
             localRecipe.AddRange(masterRecipe);
         }
-        
+
+        if (recipesMade >= 1)
+        {
+            Debug.Log(gameTimer);
+            float oldPlayTime = PlayerPrefs.GetFloat("playTime");
+
+
+
+            oldPlayTime += gameTimer;
+
+            PlayerPrefs.SetFloat("playTime", oldPlayTime);
+            PlayerPrefs.SetFloat("lastRun", gameTimer);
+
+
+            //WinManager.Instance.SetPlayerWon();
+            int runCount = PlayerPrefs.GetInt("numRuns") + 1;
+
+            PlayerPrefs.SetInt("numRuns", runCount);
+
+            SceneManager.LoadScene(nextScene);
+        }
+
+
+
+
         //update time
-        //gameTimer += Time.deltaTime;
+        gameTimer += Time.deltaTime;
 
     }
 
@@ -55,10 +104,11 @@ public class servingArea : MonoBehaviour
                 {
                     localRecipe.Remove(ingredient.gameObject.tag);
                     Destroy(ingredient.gameObject);
-                    Debug.Log("Testing localRecipe");
+                   
+                    //Debug.Log("Testing localRecipe");
 
                     //changes scene
-                    
+
                     /* For making sure the contents of localRecipe change, uncomment as needed */
                     // for (int j = 0; j < localRecipe.Count; j++) 
                     // {
