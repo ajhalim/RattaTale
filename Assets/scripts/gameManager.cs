@@ -18,7 +18,7 @@ public class gameManager : MonoBehaviour
         // Initialize and set up your game state
         timer = initialTime;
         // Example: Set the initial recipe
-        SetCurrentRecipe("Pasta");
+        //SetCurrentRecipe("Pasta");
         scoreUI.updateScore(score);
     }
 
@@ -47,7 +47,7 @@ public class gameManager : MonoBehaviour
         }
         */
     }
-
+/*
     void ChangeRecipe()
     {
         string[] recipes = { "Pizza", "Sushi", "Burger" };
@@ -57,10 +57,12 @@ public class gameManager : MonoBehaviour
 
         timer = 0f;
     }
-
+*/
+/*
     void SetCurrentRecipe(string recipeName)
     {
         recipeUI.UpdateRecipeUI(recipeName);
         // Add logic to handle other aspects of the game based on the new recipe
     }
+*/
 }
