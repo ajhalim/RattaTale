@@ -20,6 +20,8 @@ public class playerController : MonoBehaviour
 
     Vector2 movement;
 
+    public  AudioSource audioSource;
+
     private void Start()
     {
 
@@ -95,11 +97,18 @@ public class playerController : MonoBehaviour
         {
             // React to the collision (e.g., print a message).
             //Debug.Log("Player");
+            audioSource.Play();
             PlayerPrefs.SetInt("numRuns", 0);
-            SceneManager.LoadScene(currentScene);
+            Invoke("changeScene", 0.5f);
             // You can perform other actions here, such as destroying the object.
             // Destroy(gameObject);
         }
+    }
+
+    
+    void changeScene()
+    {
+        SceneManager.LoadScene(currentScene);
     }
 }
 

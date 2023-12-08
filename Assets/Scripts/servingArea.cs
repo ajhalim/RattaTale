@@ -22,7 +22,7 @@ public class servingArea : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //PlayerPrefs.SetInt("numRuns", 0);
+        PlayerPrefs.SetInt("numRuns", 0);
 
         //PlayerPrefs.SetFloat("lastRun", 90);
 
@@ -58,7 +58,8 @@ public class servingArea : MonoBehaviour
             oldPlayTime += gameTimer;
 
             PlayerPrefs.SetFloat("playTime", oldPlayTime);
-            PlayerPrefs.SetFloat("lastRun", gameTimer);
+            PlayerPrefs.SetFloat("lastRun", 90);
+            PlayerPrefs.SetInt("numRuns", 0);
 
             SceneManager.LoadScene(nextScene);
         }
