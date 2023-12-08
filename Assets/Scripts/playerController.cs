@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class playerController : MonoBehaviour
     public string currentIngredient = ""; 
 
     public Rigidbody2D player;
+    public string currentScene;
 
     Vector2 movement;
 
@@ -52,13 +54,17 @@ public class playerController : MonoBehaviour
 
             rotation = Mathf.Round(rotation / 90) * 90;
         }
+
+        player.MovePosition(player.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        player.MoveRotation(rotation);
     }
 
     private void FixedUpdate()
     {
-        player.MovePosition(player.position + movement * moveSpeed * Time.fixedDeltaTime);
+        //player.MovePosition(player.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        player.MoveRotation(rotation);
+        //player.MoveRotation(rotation);
     }
 
     string FormatTime(float timeInSeconds)
@@ -78,7 +84,22 @@ public class playerController : MonoBehaviour
         {
             Debug.Log("Game Time: " + FormatTime(gameTimer));
         }
-    }   
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the collision involves a specific tag (e.g., "Obstacle").
+
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Baddy"))
+        {
+            // React to the collision (e.g., print a message).
+            //Debug.Log("Player");
+            SceneManager.LoadScene(currentScene);
+            // You can perform other actions here, such as destroying the object.
+            // Destroy(gameObject);
+        }
+    }
 }
 
 
