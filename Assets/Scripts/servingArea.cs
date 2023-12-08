@@ -95,6 +95,8 @@ public class servingArea : MonoBehaviour
             PlayerPrefs.SetFloat("playTime", oldPlayTime);
             PlayerPrefs.SetFloat("lastRun", gameTimer);
 
+            gameTimer = 0;
+
 
             WinManager.Instance.SetPlayerWon();
             //int runCount = PlayerPrefs.GetInt("numRuns") + 1;
